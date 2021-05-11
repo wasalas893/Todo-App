@@ -36,6 +36,7 @@ const Task=()=>{
         <TextInput
           placeholder="Enter your todo task..."
           value={value}
+          testID={'input'}
           onChangeText={e => {
             setValue(e);
             showError(false);
@@ -58,6 +59,7 @@ const Task=()=>{
         <View style={styles.listItem} key={`${index}_${toDo.text}`}>
           <Text style={styles.square}></Text>
           <Text
+           testID="task"
             style={[
               styles.task,
               { textDecorationLine: toDo.completed ? "line-through" : "none" }
@@ -70,6 +72,7 @@ const Task=()=>{
             onPress={() => toggleComplete(index)}
           />
           <Button
+           testID="call-delete"
             title="X"
             onPress={() => {
               removeItem(index);
